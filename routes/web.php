@@ -1,8 +1,9 @@
 <?php
-use Illuminate\Routing\Route;
-use TCG\Voyager\Voyager;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
+use TCG\Voyager\Facades\Voyager;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
