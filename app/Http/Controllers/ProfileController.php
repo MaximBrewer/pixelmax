@@ -43,10 +43,15 @@ class ProfileController extends Controller
         $errors = null;
 
         $r->validate([
-            'telegram' => 'required|max:255'
+            'telegram' => 'required|max:255',
+            'mail' => 'email|required_without:the_same_email',
+            'password' => 'min:8',
+            'password_confirmation' => 'required_with:password|same:password|min:8'
         ]);
 
         $user = User::findOrFail(Auth::user()->id);
+
+        $r->mail = $r->the_same_email ? $user->email : $r->mail;
 
         $user->update([
             'telegram' => $r->telegram,

@@ -23,5 +23,13 @@
 	"E-Mail": "E-Mail",
 	"Confirm Password": "Повторите пароль",
 	"personal_cabinet": "Личный кабинет",
-	"Close": "Закрыть"
+	"Close": "Закрыть",
+	"Account settings": "Настройки аккаунта",
+	"Reports type": "Reports type",
+	"Reports Email": "Reports Email",
+	"Reports Telegram": "Reports Telegram",
+	"Reports Slack": "Reports Slack",
+	"Reports S3": "Reports S3",
+	"The same": "Тот же",
+	"To save the same value, leave the field empty": "Для сохранения того же значения оставьте поле пустым"
 }
