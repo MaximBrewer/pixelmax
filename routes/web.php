@@ -1,5 +1,8 @@
 <?php
-
+use Illuminate\Routing\Route;
+use TCG\Voyager\Voyager;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +29,8 @@ Route::get('/home', function () {
 
 Route::get('/profile', 'ProfileController@index')->middleware('verified')->name('profile');
 Route::post('/profile', 'ProfileController@update')->middleware('verified')->name('profile-post');
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return redirect('/');
+ });

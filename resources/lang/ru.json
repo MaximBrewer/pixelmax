@@ -1,4 +1,27 @@
 {
+	"Login": "Вход",
+	"Logout": "Выход",
+	"Save": "Сохранить",
+	"Type": "Тип",
+	"Activity": "Активность",
 	"Email for sending reports": "Email для отправки отчетов",
-	"Rating": "Рейтинг"
+	"Telegram": "Телеграм",
+	"Slack Address": "Slack адрес",
+	"Slack name": "Slack имя",
+	"Slack Token": "Slack токен",
+	"S3 Address": "S3 адрес",
+	"S3 Access Key": "S3 access key",
+	"S3 Access Secret": "S3 access secret",
+	"Register": "Регистрация",
+	"E-Mail Address": "E-Mail",
+	"Password": "Пароль",
+	"Remember Me": "Запомнить",
+	"Forgot Your Password?": "Забыли пароль?",
+	"Name": "Имя",
+	"Profile saved": "Профиль сохранен",
+	"Profile": "Профиль",
+	"E-Mail": "E-Mail",
+	"Confirm Password": "Повторите пароль",
+	"personal_cabinet": "Личный кабинет",
+	"Close": "Закрыть"
 }

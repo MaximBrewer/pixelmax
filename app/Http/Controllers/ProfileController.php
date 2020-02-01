@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Type;
+use App\Activity;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class ProfileController extends Controller
 {
@@ -25,17 +29,23 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        
-        return view('profile', ['model' => User::findOrFail(Auth::user()->id)]);
+
+        return view('profile', ['model' => User::findOrFail(Auth::user()->id), 'types' => Type::all(), 'activities' => Activity::all()]);
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application profile.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function update(Request $r)
     {
+        $errors = null;
+
+        $r->validate([
+            'telegram' => 'required|max:255'
+        ]);
+
         $user = User::findOrFail(Auth::user()->id);
 
         $user->update([
@@ -51,7 +61,11 @@ class ProfileController extends Controller
             's3_access_key' => $r->s3_access_key,
             's3_access_secret' => $r->s3_access_secret
         ]);
-        
+
+        if(!$errors) Session::flash('flash message', ['message' => __('Profile saved'), 'type' => 'success']);
+
+        if ($r->password) $user->update(['password' => Hash::make($r->password)]);
+
         return $this->index();
     }
 }
