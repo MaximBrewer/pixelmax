@@ -48,7 +48,6 @@
                             <label for="password">{{ __('Password') }}</label>
                             <input type="password" {{ !old('password_change') ? 'disabled' : '' }} class="form-control" id="password" name="password" value=""
                                 autocomplete="new-password">
-                            <small>{{ __('To save the same value, leave the field empty') }}</small>
                         </div>
                         <div class="form-group">
                             <label for="password-confirm">{{ __('Confirm Password') }}</label>
