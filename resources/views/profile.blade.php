@@ -38,15 +38,21 @@
                             <input type="email" class="form-control" id="email" name="email"
                                 value="{{ $model->email }}" readonly>
                         </div>
+                        <div class="form-check">
+                            <input onchange="document.getElementById('password').disabled = !this.checked; document.getElementById('password').value = '';document.getElementById('password-confirm').disabled = !this.checked; document.getElementById('password-confirm').value = ''" class="form-check-input" type="checkbox" name="password_change" id="change-password" {{ old('password_change') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="change-password">
+                                {{ __('Change password') }}
+                            </label>
+                        </div>
                         <div class="form-group">
                             <label for="password">{{ __('Password') }}</label>
-                            <input type="password" class="form-control" id="password" name="password" value=""
+                            <input type="password" {{ !old('password_change') ? 'disabled' : '' }} class="form-control" id="password" name="password" value=""
                                 autocomplete="new-password">
                             <small>{{ __('To save the same value, leave the field empty') }}</small>
                         </div>
                         <div class="form-group">
                             <label for="password-confirm">{{ __('Confirm Password') }}</label>
-                            <input type="password" class="form-control" id="password-confirm"
+                            <input type="password" {{ !old('password_change') ? 'disabled' : '' }} class="form-control" id="password-confirm"
                                 name="password_confirmation" value="" autocomplete="new-password">
                         </div>
                     </div>
